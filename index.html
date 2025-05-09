@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SY Gamers Store - متجر شحن ببجي وفري فاير</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background-color: #121212;
+    color: #eee;
+    direction: rtl;
+  }
+  header {
+    background-color: #0f52ba;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  }
+  header .logo {
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 1.4px;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.6rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffcc00;
+  }
+
+  .hero {
+    background: linear-gradient(rgba(15, 82, 186, 0.85), rgba(15, 82, 186, 0.85)), url('https://www.pubgmobile.com/images/hero_bg.png') no-repeat center center/cover;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffcc00;
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-shadow: 0 0 8px #000a;
+    user-select: none;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 2rem auto 3rem;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #0f52ba;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.8rem;
+  }
+
+  .card {
+    background-color: #1f1f1f;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 0.6);
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card img {
+    max-width: 140px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.7);
+  }
+
+  .card h3 {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    user-select: none;
+  }
+
+  form {
+    width: 100%;
+    max-width: 350px;
+    margin-top: auto;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  input[type="text"], input[type="number"] {
+    background-color: #333;
+    color: #eee;
+  }
+
+  select {
+    background-color: #333;
+    color: #eee;
+    cursor: pointer;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .form-row > * {
+    flex-grow: 1;
+  }
+
+  .transfer-input {
+    flex-grow: 2;
+    margin-left: 0 !important;
+  }
+
+  button {
+    background-color: #ffcc00;
+    color: #121212;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  button:hover {
+    background-color: #e6b800;
+  }
+
+  .support-info {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    background-color: #0f52ba;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(15,82,186,0.7);
+    user-select: none;
+  }
+  .support-info strong {
+    font-weight: 900;
+  }
+
+  .payment-methods {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    color: #ffcc00;
+    font-weight: 600;
+    user-select: none;
+  }
+
+  .payment-number {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #004a99;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-left: 6px;
+    user-select: text;
+  }
+
+  .conversion-info {
+    margin-top: 1rem;
+    background-color: #222;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    user-select: text;
+    color: #ffcc00;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0f52ba;
+    color: #ddd;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .hero {
+      height: 220px;
+      font-size: 2rem;
+    }
+    main {
+      padding: 0 0.5rem;
+    }
+    .form-row {
+      flex-direction: column;
+    }
+    .transfer-input {
+      margin-left: 0 !important;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">SY Gamers Store</div>
+  <nav>
+    <a href="#pubg">ببجي</a>
+    <a href="#freefire">فري فاير</a>
+    <a href="#support">الدعم</a>
+  </nav>
+</header>
+
+<section class="hero" aria-label="الصفحة الرئيسية SY Gamers Store">
+  متجر الشحن الرسمي لألعاب ببجي وفري فاير
+</section>
+
+<main>
+  <section id="pubg" aria-label="شحن ببجي">
+    <h2 class="section-title">شحن ببجي</h2>
+    <div class="cards-grid">
+      <div class="card" role="region" aria-labelledby="pubg-title">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/PUBG_logo.svg/1200px-PUBG_logo.svg.png" alt="شعار لعبة PUBG" />
+        <h3 id="pubg-title">شحن UC ببجي</h3>
+        <form id="pubg-form">
+          <label for="pubg-username">اسم المستخدم (ID):</label>
+          <input type="text" id="pubg-username" name="username" placeholder="أدخل اسم المستخدم" required />
+          <label for="pubg-amount">كمية UC:</label>
+          <select id="pubg-amount" name="amount" required>
+            <option value="" disabled selected>اختر الكمية</option>
+            <option value="60">60 UC - 9.99 $</option>
+            <option value="300">300 UC - 44.99 $</option>
+            <option value="600">600 UC - 89.99 $</option>
+            <option value="1200">1200 UC - 169.99 $</option>
+            <option value="2700">2700 UC - 379.99 $</option>
+          </select>
+          <div class="form-row">
+            <label for="pubg-transfer-code" style="flex-shrink: 0; margin: 0; padding-top: 0.4rem;">إدخال رمز التحويل:</label>
+            <input type="text" id="pubg-transfer-code" name="transferCode" class="transfer-input" placeholder="أدخل رمز التحويل" required/>
+          </div>
+          <button type="submit">شحن الآن</button>
+        </form>
+        <div class="payment-methods" aria-label="طرق الدفع ورقم الهاتف">
+          طرق الدفع: سيرياتيل كاش
+          <span class="payment-number" aria-label="رقم الهاتف للتحويل">+963988063709</span>
+        </div>
+        <div id="pubg-conversion-info" class="conversion-info" aria-live="polite" style="display:none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="freefire" aria-label="شحن فري فاير" style="margin-top:3rem;">
+    <h2 class="section-title">شحن فري فاير</h2>
+    <div class="cards-grid">
+      <div class="card" role="region" aria-labelledby="freefire-title">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Free_Fire_logo.png" alt="شعار لعبة Free Fire" />
+        <h3 id="freefire-title">شحن Diamonds في فري فاير</h3>
+        <form id="freefire-form">
+          <label for="freefire-username">اسم المستخدم (ID):</label>
+          <input type="text" id="freefire-username" name="username" placeholder="أدخل اسم المستخدم" required />
+          <label for="freefire-amount">كمية Diamonds:</label>
+          <select id="freefire-amount" name="amount" required>
+            <option value="" disabled selected>اختر الكمية</option>
+            <option value="50">50 Diamonds - 9.99 $</option>
+            <option value="100">100 Diamonds - 17.99 $</option>
+            <option value="300">300 Diamonds - 44.99 $</option>
+            <option value="500">500 Diamonds - 74.99 $</option>
+            <option value="1000">1000 Diamonds - 139.99 $</option>
+          </select>
+          <div class="form-row">
+            <label for="freefire-transfer-code" style="flex-shrink: 0; margin: 0; padding-top: 0.4rem;">إدخال رمز التحويل:</label>
+            <input type="text" id="freefire-transfer-code" name="transferCode" class="transfer-input" placeholder="أدخل رمز التحويل" required/>
+          </div>
+          <button type="submit">شحن الآن</button>
+        </form>
+        <div class="payment-methods" aria-label="طرق الدفع ورقم الهاتف">
+          طرق الدفع: سيرياتيل كاش
+          <span class="payment-number" aria-label="رقم الهاتف للتحويل">+963988063709</span>
+        </div>
+        <div id="freefire-conversion-info" class="conversion-info" aria-live="polite" style="display:none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support" class="support-info" aria-label="معلومات الدعم">
+    للدعم والاستفسارات، يرجى التواصل معنا على الرقم التالي:<br />
+    <strong>+963988063709</strong><br />
+    التحويلات متوفرة أيضًا على نفس الرقم.
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 SY Gamers Store. جميع الحقوق محفوظة.
+</footer>
+
+<script>
+  const transferNumber = '+963988063709';
+
+  function showConversionInfo(formId, gameName) {
+    const form = document.getElementById(formId);
+    const username = form.username.value.trim();
+    const amountSelect = form.amount;
+    const amount = amountSelect.value;
+    const transferCodeInput = form.transferCode.value.trim();
+
+    if(!username) {
+      alert('يرجى إدخال اسم المستخدم (ID)');
+      return false;
+    }
+    if(!amount) {
+      alert('يرجى اختيار الكمية');
+      return false;
+    }
+    if(!transferCodeInput) {
+      alert('يرجى إدخال رمز التحويل');
+      return false;
+    }
+    // Get the text of selected option (for price display)
+    const amountText = amountSelect.options[amountSelect.selectedIndex].text.split(' - ')[0];
+    // Compose message
+    const infoMsg = 
+      `شكرًا لطلب شحن ${amountText} في لعبة ${gameName}.\n` +
+      `اسم المستخدم الخاص بك: ${username}\n` +
+      `رمز التحويل الذي أدخلته: ${transferCodeInput}\n` +
+      `يرجى تحويل المبلغ المطلوب إلى رقم سيرياتيل كاش التالي:\n` +
+      `${transferNumber}\n` +
+      `بعد التحويل، يرجى إرسال تأكيد الدفع مع تفاصيل الطلب لنا.`;
+
+    // Show conversion info div
+    const infoDiv = document.getElementById(formId === 'pubg-form' ? 'pubg-conversion-info' : 'freefire-conversion-info');
+    infoDiv.style.display = 'block';
+    infoDiv.textContent = infoMsg.replace(/\n/g, ' | ');
+    // Clear form except transfer code (keeping it for user reference)
+    form.username.value = '';
+    form.amount.selectedIndex = 0;
+    return false;
+  }
+
+  document.getElementById('pubg-form').onsubmit = function(e) {
+    e.preventDefault();
+    return showConversionInfo('pubg-form', 'ببجي UC');
+  };
+
+  document.getElementById('freefire-form').onsubmit = function(e) {
+    e.preventDefault();
+    return showConversionInfo('freefire-form', 'فري فاير Diamonds');
+  };
+</script>
+</body>
+</html>
+
+ 
